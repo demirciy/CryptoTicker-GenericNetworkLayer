@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  CryptoTicker
+
+  Created by Yusuf Demirci on 14.02.21.
+  
+*/
+
+// MARK: - Error
+
+Error.Network.general = "An error occured";
+Error.Network.responseCouldNotParse = "Response could not parse";
+Error.Network.errorMessageNotFound = "Error message not found";
+Error.Network.coinNotFound = "Coin not found";

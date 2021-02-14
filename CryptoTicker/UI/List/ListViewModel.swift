@@ -13,27 +13,27 @@ class ListViewModel {
 
     var coins = PublishSubject<[Coin]>()
 
+    private let disposeBag = DisposeBag()
+
     func refreshCoins() {
-        coins.onNext(getDummyCoins())
+        TickerService.hr24().subscribe(onNext: { response in
+            self.coins.onNext(response.coins)
+        }, onError: { error in
+            print(error)
+        })
+        .disposed(by: disposeBag)
     }
 
     func search(_ text: String?) {
-        if let text = text, !text.isEmpty {
-            coins.onNext(getDummyCoins().filter { $0.symbol.lowercased().contains(text.lowercased()) })
-        } else {
-            coins.onNext(getDummyCoins())
-        }
-    }
-}
-
-private extension ListViewModel {
-
-    func getDummyCoins() -> [Coin] {
-        [
-            .init(symbol: "BTCUSDT", price: 42500),
-            .init(symbol: "ETHUSDT", price: 1500),
-            .init(symbol: "XRPUSDT", price: 0.5),
-            .init(symbol: "LTCUSDT", price: 175)
-        ]
+        TickerService.hr24().subscribe(onNext: { response in
+            if let text = text, !text.isEmpty {
+                self.coins.onNext(response.coins.filter { $0.symbol.lowercased().contains(text.lowercased()) })
+            } else {
+                self.coins.onNext(response.coins)
+            }
+        }, onError: { error in
+            print(error.localizedDescription)
+        })
+        .disposed(by: disposeBag)
     }
 }

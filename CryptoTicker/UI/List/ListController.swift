@@ -69,7 +69,7 @@ class ListController: UITableViewController {
         searchController.searchBar.rx.text
             .orEmpty
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { (text) in
+            .subscribe(onNext: { text in
                 self.viewModel.search(text)
             })
             .disposed(by: disposeBag)
