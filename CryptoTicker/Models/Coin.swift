@@ -10,5 +10,5 @@ import Foundation
 struct Coin: Codable {
 
     let symbol: String
-    let price: Double
+    let lastPrice: String
 }

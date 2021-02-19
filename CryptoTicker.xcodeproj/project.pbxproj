@@ -19,10 +19,9 @@
 		C942529D25D9B7C2004FA5D8 /* fail-response.json in Resources */ = {isa = PBXBuildFile; fileRef = C942529C25D9B7C2004FA5D8 /* fail-response.json */; };
 		C94252A925D9B816004FA5D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94252AB25D9B816004FA5D8 /* Localizable.strings */; };
 		C94252B025D9BA3C004FA5D8 /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94252AF25D9BA3C004FA5D8 /* TickerRequest.swift */; };
+		C94FFA8625DB44BE0070761E /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FFA8525DB44BE0070761E /* ListTableCell.swift */; };
 		C9C3917B25D837C2005FEA93 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3917A25D837C2005FEA93 /* NetworkManager.swift */; };
 		C9C3918125D8381F005FEA93 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3918025D8381F005FEA93 /* Request.swift */; };
-		C9C3918925D8382A005FEA93 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3918825D8382A005FEA93 /* Response.swift */; };
-		C9C3919725D84504005FEA93 /* TickerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3919625D84504005FEA93 /* TickerResponse.swift */; };
 		C9C3919F25D8451E005FEA93 /* TickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3919E25D8451E005FEA93 /* TickerService.swift */; };
 		C9CCDF8925D1E6F2004EDF08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDF8825D1E6F2004EDF08 /* AppDelegate.swift */; };
 		C9CCDF8B25D1E6F2004EDF08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDF8A25D1E6F2004EDF08 /* SceneDelegate.swift */; };
@@ -68,10 +67,9 @@
 		C942529C25D9B7C2004FA5D8 /* fail-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fail-response.json"; sourceTree = "<group>"; };
 		C94252AA25D9B816004FA5D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C94252AF25D9BA3C004FA5D8 /* TickerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRequest.swift; sourceTree = "<group>"; };
+		C94FFA8525DB44BE0070761E /* ListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
 		C9C3917A25D837C2005FEA93 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C9C3918025D8381F005FEA93 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		C9C3918825D8382A005FEA93 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		C9C3919625D84504005FEA93 /* TickerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerResponse.swift; sourceTree = "<group>"; };
 		C9C3919E25D8451E005FEA93 /* TickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerService.swift; sourceTree = "<group>"; };
 		C9CCDF8525D1E6F2004EDF08 /* CryptoTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CCDF8825D1E6F2004EDF08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				C91A2D2125D1E8A30047B045 /* ListController.swift */,
+				C94FFA8525DB44BE0070761E /* ListTableCell.swift */,
 				C91A2D2925D1E8D20047B045 /* ListViewModel.swift */,
 			);
 			path = List;
@@ -209,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				C9C3918025D8381F005FEA93 /* Request.swift */,
-				C9C3918825D8382A005FEA93 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				C94252AF25D9BA3C004FA5D8 /* TickerRequest.swift */,
-				C9C3919625D84504005FEA93 /* TickerResponse.swift */,
 				C9C3919E25D8451E005FEA93 /* TickerService.swift */,
 			);
 			path = Ticker;
@@ -558,9 +555,8 @@
 				C91A2D3325D1EC190047B045 /* Coin.swift in Sources */,
 				C9C3919F25D8451E005FEA93 /* TickerService.swift in Sources */,
 				C94252B025D9BA3C004FA5D8 /* TickerRequest.swift in Sources */,
-				C9C3919725D84504005FEA93 /* TickerResponse.swift in Sources */,
+				C94FFA8625DB44BE0070761E /* ListTableCell.swift in Sources */,
 				C903CE6425D34A41000A8C5D /* CoinViewModel.swift in Sources */,
-				C9C3918925D8382A005FEA93 /* Response.swift in Sources */,
 				C9C3918125D8381F005FEA93 /* Request.swift in Sources */,
 				C9CCDF8925D1E6F2004EDF08 /* AppDelegate.swift in Sources */,
 				C942528F25D9A9D5004FA5D8 /* NetworkError.swift in Sources */,

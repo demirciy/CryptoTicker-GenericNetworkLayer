@@ -9,7 +9,7 @@ import RxSwift
 
 class TickerService {
 
-    class func hr24() -> Observable<TickerResponse> {
+    class func hr24() -> Observable<[Coin]> {
         NetworkManager.shared.sendRequest(request: TickerRequest())
     }
 }

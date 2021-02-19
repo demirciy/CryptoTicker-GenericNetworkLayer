@@ -7,4 +7,9 @@
 
 import Foundation
 
-class TickerRequest: Request {}
+class TickerRequest: Request {
+
+    override func path() -> String {
+        "/ticker/24hr"
+    }
+}

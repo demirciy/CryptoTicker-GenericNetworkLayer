@@ -5,6 +5,7 @@
 //  Created by Yusuf Demirci on 13.02.21.
 //
 
+import Alamofire
 import RxSwift
 
 protocol NetworkManagerDelegate {
@@ -17,25 +18,26 @@ class NetworkManager: NetworkManagerDelegate {
 
     func sendRequest<T: Codable>(request: Request) -> Observable<T> {
         Observable.create { observer in
-            let data = try! Data(contentsOf:
-                                    URL(fileURLWithPath: Bundle.main.path(forResource: "success-response", ofType: "json")!),
-                                 options: NSData.ReadingOptions.mappedIfSafe)
+            AF.request(request.endpoint,
+                       method: request.method(),
+                       parameters: request.parameters(),
+                       headers: request.headers())
+                .responseData { data in
+                    guard let data = data.data else {
+                        observer.onError(NetworkError.init(message: .invalidResponse))
+                        observer.onCompleted()
+                        return
+                    }
 
-            do {
-                let response = try JSONDecoder().decode(Response<T>.self, from: data)
+                    do {
+                        let response = try JSONDecoder().decode(T.self, from: data)
+                        observer.onNext(response)
+                    } catch {
+                        observer.onError(NetworkError.init(message: .responseCouldNotParse))
+                    }
 
-                if let data = response.data {
-                    observer.onNext(data)
-                } else if let error = response.error {
-                    observer.onError(error)
-                } else {
-                    observer.onError(NetworkError.init(message: .responseCouldNotParse))
+                    observer.onCompleted()
                 }
-            } catch {
-                observer.onError(NetworkError.init(message: .responseCouldNotParse))
-            }
-
-            observer.onCompleted()
 
             return Disposables.create {}
         }

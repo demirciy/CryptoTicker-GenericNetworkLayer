@@ -8,7 +8,5 @@
 
 // MARK: - Error
 
-Error.Network.general = "An error occured";
-Error.Network.responseCouldNotParse = "Response could not parse";
-Error.Network.errorMessageNotFound = "Error message not found";
-Error.Network.coinNotFound = "Coin not found";
+invalidResponse = "Invalid response";
+responseCouldNotParse = "Response could not parse";

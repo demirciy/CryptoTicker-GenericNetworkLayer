@@ -6,6 +6,7 @@ target 'CryptoTicker' do
   use_frameworks!
 
   # Pods for CryptoTicker
+  pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
 

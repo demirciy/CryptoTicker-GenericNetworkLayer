@@ -12,23 +12,11 @@ struct NetworkError: Error, Codable {
     let message: NetworkErrorMessage
 
     var localizedDescription: String {
-        NSLocalizedString("Error.Network.\(message)", comment: "")
-    }
-
-    init(message: NetworkErrorMessage) {
-        self.message = message
-    }
-
-    init(from decoder: Decoder) throws {
-        let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
-
-        message = (try? keyedContainer.decode(NetworkErrorMessage.self, forKey: .message)) ?? .errorMessageNotFound
+        NSLocalizedString("\(message)", comment: "")
     }
 }
 
 enum NetworkErrorMessage: String, Codable {
-    case general = "GENERAL"
-    case responseCouldNotParse = "RESPONSE_COULD_NOT_PARSE"
-    case errorMessageNotFound = "ERROR_MESSAGE_NOT_FOUND"
-    case coinNotFound = "COIN_NOT_FOUND"
+    case invalidResponse
+    case responseCouldNotParse
 }

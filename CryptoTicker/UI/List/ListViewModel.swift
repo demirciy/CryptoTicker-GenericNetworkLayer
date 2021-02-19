@@ -17,9 +17,9 @@ class ListViewModel {
 
     func refreshCoins() {
         TickerService.hr24().subscribe(onNext: { response in
-            self.coins.onNext(response.coins)
+            self.coins.onNext(response)
         }, onError: { error in
-            print(error)
+            print(error.localizedDescription)
         })
         .disposed(by: disposeBag)
     }
@@ -27,9 +27,9 @@ class ListViewModel {
     func search(_ text: String?) {
         TickerService.hr24().subscribe(onNext: { response in
             if let text = text, !text.isEmpty {
-                self.coins.onNext(response.coins.filter { $0.symbol.lowercased().contains(text.lowercased()) })
+                self.coins.onNext(response.filter { $0.symbol.lowercased().contains(text.lowercased()) })
             } else {
-                self.coins.onNext(response.coins)
+                self.coins.onNext(response)
             }
         }, onError: { error in
             print(error.localizedDescription)

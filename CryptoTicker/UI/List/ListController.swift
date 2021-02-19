@@ -42,13 +42,13 @@ class ListController: UITableViewController {
         // IGNORE: This is just for running RxSwift with UITableViewController
         tableView.dataSource = nil
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ListCell")
+        tableView.register(ListTableCell.self, forCellReuseIdentifier: "ListTableCell")
 
         // Cell displaying
         viewModel.coins
-            .bind(to: tableView.rx.items(cellIdentifier: "ListCell", cellType: UITableViewCell.self)) { index, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: "ListTableCell", cellType: ListTableCell.self)) { index, model, cell in
                 cell.textLabel?.text = model.symbol
-                cell.detailTextLabel?.text = "\(model.price)"
+                cell.detailTextLabel?.text = model.lastPrice
             }
             .disposed(by: disposeBag)
 
