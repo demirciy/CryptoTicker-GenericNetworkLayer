@@ -7,9 +7,15 @@
 
 import RxSwift
 
-class TickerService {
+class TickerService: ServiceDelegate {
 
-    class func hr24() -> Observable<[Coin]> {
-        NetworkManager.shared.sendRequest(request: TickerRequest())
+    internal let networkManager: NetworkManagerDelegate
+
+    init(networkManager: NetworkManagerDelegate = NetworkManager()) {
+        self.networkManager = networkManager
+    }
+
+    func hr24(request: TickerRequest = .init()) -> Observable<[Coin]> {
+        networkManager.sendRequest(request: request)
     }
 }

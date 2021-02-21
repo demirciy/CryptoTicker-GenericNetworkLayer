@@ -17,6 +17,7 @@ struct NetworkError: Error, Codable {
 }
 
 enum NetworkErrorMessage: String, Codable {
+    case invalidTestFile
     case invalidResponse
     case responseCouldNotParse
 }

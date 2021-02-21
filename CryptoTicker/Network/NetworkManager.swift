@@ -14,8 +14,6 @@ protocol NetworkManagerDelegate {
 
 class NetworkManager: NetworkManagerDelegate {
 
-    static let shared = NetworkManager()
-
     func sendRequest<T: Codable>(request: Request) -> Observable<T> {
         Observable.create { observer in
             AF.request(request.endpoint,

@@ -14,9 +14,7 @@
 		C91A2D2225D1E8A30047B045 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A2D2125D1E8A30047B045 /* ListController.swift */; };
 		C91A2D2A25D1E8D20047B045 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A2D2925D1E8D20047B045 /* ListViewModel.swift */; };
 		C91A2D3325D1EC190047B045 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A2D3225D1EC190047B045 /* Coin.swift */; };
-		C942526125D88DBB004FA5D8 /* success-response.json in Resources */ = {isa = PBXBuildFile; fileRef = C942526025D88DBB004FA5D8 /* success-response.json */; };
 		C942528F25D9A9D5004FA5D8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942528E25D9A9D5004FA5D8 /* NetworkError.swift */; };
-		C942529D25D9B7C2004FA5D8 /* fail-response.json in Resources */ = {isa = PBXBuildFile; fileRef = C942529C25D9B7C2004FA5D8 /* fail-response.json */; };
 		C94252A925D9B816004FA5D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94252AB25D9B816004FA5D8 /* Localizable.strings */; };
 		C94252B025D9BA3C004FA5D8 /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94252AF25D9BA3C004FA5D8 /* TickerRequest.swift */; };
 		C94FFA8625DB44BE0070761E /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FFA8525DB44BE0070761E /* ListTableCell.swift */; };
@@ -27,8 +25,11 @@
 		C9CCDF8B25D1E6F2004EDF08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDF8A25D1E6F2004EDF08 /* SceneDelegate.swift */; };
 		C9CCDF9225D1E6F3004EDF08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CCDF9125D1E6F3004EDF08 /* Assets.xcassets */; };
 		C9CCDF9525D1E6F3004EDF08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CCDF9325D1E6F3004EDF08 /* LaunchScreen.storyboard */; };
-		C9CCDFA025D1E6F3004EDF08 /* CryptoTickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDF9F25D1E6F3004EDF08 /* CryptoTickerTests.swift */; };
 		C9CCDFAB25D1E6F3004EDF08 /* CryptoTickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDFAA25D1E6F3004EDF08 /* CryptoTickerUITests.swift */; };
+		C9E7B55125E1C18300590679 /* TickerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7B55025E1C18300590679 /* TickerServiceTests.swift */; };
+		C9E7B57525E1CBAB00590679 /* Ticker24HrSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C9E7B57425E1CBAB00590679 /* Ticker24HrSuccessResponse.json */; };
+		C9E7B58425E1CDEF00590679 /* ServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7B58325E1CDEF00590679 /* ServiceDelegate.swift */; };
+		C9E7B5A625E1D15700590679 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7B56825E1C9D100590679 /* MockNetworkManager.swift */; };
 		C9F813F425D5F920000CEC17 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F813F325D5F920000CEC17 /* UITableView+Extension.swift */; };
 		DC080BD9F6D346B51499C588 /* Pods_CryptoTicker_CryptoTickerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC62743FAEB0B1DD61662A5 /* Pods_CryptoTicker_CryptoTickerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -62,9 +63,7 @@
 		C91A2D2125D1E8A30047B045 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		C91A2D2925D1E8D20047B045 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C91A2D3225D1EC190047B045 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		C942526025D88DBB004FA5D8 /* success-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "success-response.json"; sourceTree = "<group>"; };
 		C942528E25D9A9D5004FA5D8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		C942529C25D9B7C2004FA5D8 /* fail-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fail-response.json"; sourceTree = "<group>"; };
 		C94252AA25D9B816004FA5D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C94252AF25D9BA3C004FA5D8 /* TickerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRequest.swift; sourceTree = "<group>"; };
 		C94FFA8525DB44BE0070761E /* ListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
@@ -78,11 +77,14 @@
 		C9CCDF9425D1E6F3004EDF08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9CCDF9625D1E6F3004EDF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CCDF9B25D1E6F3004EDF08 /* CryptoTickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9CCDF9F25D1E6F3004EDF08 /* CryptoTickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerTests.swift; sourceTree = "<group>"; };
 		C9CCDFA125D1E6F3004EDF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CCDFA625D1E6F3004EDF08 /* CryptoTickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CCDFAA25D1E6F3004EDF08 /* CryptoTickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerUITests.swift; sourceTree = "<group>"; };
 		C9CCDFAC25D1E6F3004EDF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9E7B55025E1C18300590679 /* TickerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerServiceTests.swift; sourceTree = "<group>"; };
+		C9E7B56825E1C9D100590679 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		C9E7B57425E1CBAB00590679 /* Ticker24HrSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Ticker24HrSuccessResponse.json; sourceTree = "<group>"; };
+		C9E7B58325E1CDEF00590679 /* ServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDelegate.swift; sourceTree = "<group>"; };
 		C9F813F325D5F920000CEC17 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		CCC62743FAEB0B1DD61662A5 /* Pods_CryptoTicker_CryptoTickerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTicker_CryptoTickerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB43E73702805689B79A269 /* Pods-CryptoTickerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTickerTests.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTickerTests/Pods-CryptoTickerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,15 +165,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C94252B725D9BA6F004FA5D8 /* DummyResponses */ = {
-			isa = PBXGroup;
-			children = (
-				C942526025D88DBB004FA5D8 /* success-response.json */,
-				C942529C25D9B7C2004FA5D8 /* fail-response.json */,
-			);
-			path = DummyResponses;
-			sourceTree = "<group>";
-		};
 		C9665EE025D1E75100F8C69E /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				C9CCDF9125D1E6F3004EDF08 /* Assets.xcassets */,
-				C94252B725D9BA6F004FA5D8 /* DummyResponses */,
 				C9CCDF9325D1E6F3004EDF08 /* LaunchScreen.storyboard */,
 				C94252AB25D9B816004FA5D8 /* Localizable.strings */,
 			);
@@ -215,6 +207,7 @@
 		C9C3919425D844B4005FEA93 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7B58325E1CDEF00590679 /* ServiceDelegate.swift */,
 				C9C3919525D844E1005FEA93 /* Ticker */,
 			);
 			path = Endpoints;
@@ -267,8 +260,8 @@
 		C9CCDF9E25D1E6F3004EDF08 /* CryptoTickerTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9CCDF9F25D1E6F3004EDF08 /* CryptoTickerTests.swift */,
 				C9CCDFA125D1E6F3004EDF08 /* Info.plist */,
+				C9E7B54D25E1C16000590679 /* Network */,
 			);
 			path = CryptoTickerTests;
 			sourceTree = "<group>";
@@ -280,6 +273,40 @@
 				C9CCDFAC25D1E6F3004EDF08 /* Info.plist */,
 			);
 			path = CryptoTickerUITests;
+			sourceTree = "<group>";
+		};
+		C9E7B54D25E1C16000590679 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7B56825E1C9D100590679 /* MockNetworkManager.swift */,
+				C9E7B54E25E1C16700590679 /* Endpoints */,
+				C9E7B57325E1CB4300590679 /* Responses */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C9E7B54E25E1C16700590679 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7B54F25E1C16D00590679 /* Ticker */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		C9E7B54F25E1C16D00590679 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7B55025E1C18300590679 /* TickerServiceTests.swift */,
+			);
+			path = Ticker;
+			sourceTree = "<group>";
+		};
+		C9E7B57325E1CB4300590679 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7B57425E1CBAB00590679 /* Ticker24HrSuccessResponse.json */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		C9F813F125D5F920000CEC17 /* Utilities */ = {
@@ -421,8 +448,6 @@
 			files = (
 				C94252A925D9B816004FA5D8 /* Localizable.strings in Resources */,
 				C9CCDF9525D1E6F3004EDF08 /* LaunchScreen.storyboard in Resources */,
-				C942529D25D9B7C2004FA5D8 /* fail-response.json in Resources */,
-				C942526125D88DBB004FA5D8 /* success-response.json in Resources */,
 				C9CCDF9225D1E6F3004EDF08 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7B57525E1CBAB00590679 /* Ticker24HrSuccessResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +591,7 @@
 				C91A2D2225D1E8A30047B045 /* ListController.swift in Sources */,
 				C9C3917B25D837C2005FEA93 /* NetworkManager.swift in Sources */,
 				C9F813F425D5F920000CEC17 /* UITableView+Extension.swift in Sources */,
+				C9E7B58425E1CDEF00590679 /* ServiceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +599,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9CCDFA025D1E6F3004EDF08 /* CryptoTickerTests.swift in Sources */,
+				C9E7B5A625E1D15700590679 /* MockNetworkManager.swift in Sources */,
+				C9E7B55125E1C18300590679 /* TickerServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

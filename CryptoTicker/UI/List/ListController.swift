@@ -14,7 +14,7 @@ class ListController: UITableViewController {
     // MARK: Properties
 
     private let searchController: UISearchController = {
-        let controller: UISearchController = UISearchController()
+        let controller: UISearchController = .init()
         controller.searchBar.placeholder = "Search"
         controller.obscuresBackgroundDuringPresentation = false
         return controller
@@ -22,9 +22,9 @@ class ListController: UITableViewController {
 
     private let viewModel: ListViewModel
 
-    private let disposeBag = DisposeBag()
+    private let disposeBag: DisposeBag = .init()
 
-    init(viewModel: ListViewModel = ListViewModel()) {
+    init(viewModel: ListViewModel = .init()) {
         self.viewModel = viewModel
 
         super.init(style: .grouped)
@@ -58,8 +58,8 @@ class ListController: UITableViewController {
             .subscribe(onNext: { coin in
                 self.tableView.deselectAllSelectedRows()
 
-                let coinViewModel = CoinViewModel(coin: coin)
-                let coinController = CoinController(viewModel: coinViewModel)
+                let coinViewModel: CoinViewModel = .init(coin: coin)
+                let coinController: CoinController = .init(viewModel: coinViewModel)
 
                 self.navigationController?.show(coinController, sender: self)
             })

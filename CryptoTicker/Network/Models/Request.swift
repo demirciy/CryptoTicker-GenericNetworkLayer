@@ -10,6 +10,7 @@ import Alamofire
 protocol RequestDelegate {
     var base: String { get }
     var endpoint: String { get }
+    var testResponseFile: String { get }
 
     func path() -> String
     func method() -> HTTPMethod
@@ -20,10 +21,10 @@ protocol RequestDelegate {
 class Request: RequestDelegate {
 
     var base: String = "https://api.binance.com/api/v3"
-
     var endpoint: String {
         base + path()
     }
+    var testResponseFile: String = ""
 
     func path() -> String { "" }
     func method() -> HTTPMethod { .get }

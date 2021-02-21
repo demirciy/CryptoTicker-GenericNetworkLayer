@@ -11,12 +11,12 @@ class ListViewModel {
 
     // MARK: Properties
 
-    var coins = PublishSubject<[Coin]>()
+    var coins: PublishSubject<[Coin]> = .init()
 
-    private let disposeBag = DisposeBag()
+    private let disposeBag: DisposeBag = .init()
 
     func refreshCoins() {
-        TickerService.hr24().subscribe(onNext: { response in
+        TickerService().hr24().subscribe(onNext: { response in
             self.coins.onNext(response)
         }, onError: { error in
             print(error.localizedDescription)
@@ -25,7 +25,7 @@ class ListViewModel {
     }
 
     func search(_ text: String?) {
-        TickerService.hr24().subscribe(onNext: { response in
+        TickerService().hr24().subscribe(onNext: { response in
             if let text = text, !text.isEmpty {
                 self.coins.onNext(response.filter { $0.symbol.lowercased().contains(text.lowercased()) })
             } else {
