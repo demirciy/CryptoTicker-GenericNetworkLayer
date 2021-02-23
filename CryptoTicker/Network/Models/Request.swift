@@ -9,25 +9,23 @@ import Alamofire
 
 protocol RequestDelegate {
     var base: String { get }
+    var path: String { get }
     var endpoint: String { get }
-    var testResponseFile: String { get }
-
-    func path() -> String
-    func method() -> HTTPMethod
-    func parameters() -> Parameters
-    func headers() -> HTTPHeaders
+    var method: HTTPMethod { get }
+    var parameters: Parameters { get }
+    var headers: HTTPHeaders { get }
+    var testResponseFile: String { get set }
 }
 
 class Request: RequestDelegate {
 
     var base: String = "https://api.binance.com/api/v3"
+    var path: String { "" }
     var endpoint: String {
-        base + path()
+        base + path
     }
+    var method: HTTPMethod { .get }
+    var parameters: Parameters { [:] }
+    var headers: HTTPHeaders { [:] }
     var testResponseFile: String = ""
-
-    func path() -> String { "" }
-    func method() -> HTTPMethod { .get }
-    func parameters() -> Parameters { [:] }
-    func headers() -> HTTPHeaders { [:] }
 }

@@ -9,35 +9,32 @@ import Alamofire
 import RxSwift
 
 protocol NetworkManagerDelegate {
-    func sendRequest<T: Codable>(request: Request) -> Observable<T>
+    func sendRequest<T: Codable>(request: Request) -> Single<T>
 }
 
 class NetworkManager: NetworkManagerDelegate {
-
-    func sendRequest<T: Codable>(request: Request) -> Observable<T> {
-        Observable.create { observer in
+    
+    func sendRequest<T: Codable>(request: Request) -> Single<T> {
+        Single<T>.create { single in
             AF.request(request.endpoint,
-                       method: request.method(),
-                       parameters: request.parameters(),
-                       headers: request.headers())
+                       method: request.method,
+                       parameters: request.parameters,
+                       headers: request.headers)
                 .responseData { data in
                     guard let data = data.data else {
-                        observer.onError(NetworkError.init(message: .invalidResponse))
-                        observer.onCompleted()
+                        single(.error(NetworkError.init(message: .invalidResponse)))
                         return
                     }
-
+                    
                     do {
                         let response = try JSONDecoder().decode(T.self, from: data)
-                        observer.onNext(response)
+                        single(.success(response))
                     } catch {
-                        observer.onError(NetworkError.init(message: .responseCouldNotParse))
+                        single(.error(NetworkError.init(message: .responseCouldNotParse)))
                     }
-
-                    observer.onCompleted()
                 }
-
-            return Disposables.create {}
+            
+            return Disposables.create()
         }
     }
 }

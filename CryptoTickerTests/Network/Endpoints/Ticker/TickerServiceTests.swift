@@ -30,11 +30,11 @@ class TickerServiceTests: XCTestCase {
     func testHr24Real() {
         let expectation = XCTestExpectation(description: "Succeed")
 
-        TickerService().hr24().subscribe(onNext: { response in
+        TickerService().hr24().subscribe { response in
             if !response.isEmpty {
                 expectation.fulfill()
             }
-        })
+        } onError: { _ in }
         .disposed(by: disposeBag)
 
         wait(for: [expectation], timeout: 1)
@@ -46,11 +46,11 @@ class TickerServiceTests: XCTestCase {
         let request = TickerRequest()
         request.testResponseFile = "Ticker24HrSuccessResponse"
 
-        tickerService.hr24(request: request).subscribe(onNext: { response in
+        tickerService.hr24(request: request).subscribe { response in
             if !response.isEmpty {
                 expectation.fulfill()
             }
-        })
+        } onError: { _ in }
         .disposed(by: disposeBag)
 
         wait(for: [expectation], timeout: 1)

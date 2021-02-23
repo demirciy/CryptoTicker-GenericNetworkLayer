@@ -15,7 +15,7 @@ class TickerService: ServiceDelegate {
         self.networkManager = networkManager
     }
 
-    func hr24(request: TickerRequest = .init()) -> Observable<[Coin]> {
+    func hr24(request: TickerRequest = .init()) -> Single<[Coin]> {
         networkManager.sendRequest(request: request)
     }
 }

@@ -12,12 +12,11 @@ import RxSwift
 
 class MockNetworkManager: NetworkManagerDelegate {
     
-    func sendRequest<T: Codable>(request: CryptoTicker.Request) -> Observable<T> {
-        Observable.create { observer in
+    func sendRequest<T: Codable>(request: CryptoTicker.Request) -> Single<T> {
+        Single<T>.create { single in
             guard let path = Bundle(for: MockNetworkManager.self)
                     .path(forResource: request.testResponseFile, ofType: "json") else {
-                observer.onError(NetworkError.init(message: .invalidTestFile))
-                observer.onCompleted()
+                single(.error(NetworkError.init(message: .invalidResponse)))
                 return Disposables.create {}
             }
             
@@ -25,12 +24,10 @@ class MockNetworkManager: NetworkManagerDelegate {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 
                 let response = try JSONDecoder().decode(T.self, from: data)
-                observer.onNext(response)
+                single(.success(response))
             } catch {
-                observer.onError(NetworkError.init(message: .responseCouldNotParse))
+                single(.error(NetworkError.init(message: .responseCouldNotParse)))
             }
-            
-            observer.onCompleted()
             
             return Disposables.create {}
         }
